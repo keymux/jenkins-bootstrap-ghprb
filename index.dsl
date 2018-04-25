@@ -21,13 +21,9 @@ pipelineJob('ghprb-test-job') {
       scriptPath('Jenkinsfile')
     }
     properties {
-      parameters {
-        stringParam('sha1', 'master', 'The commit hash to build.')
-      }
       githubProjectUrl('https://github.com/' + githubProjectFull)
     }
     triggers {
-      orgWhitelist('jenkinsci')
       commentFilePath('github.comment.file.txt')
     }
   }
