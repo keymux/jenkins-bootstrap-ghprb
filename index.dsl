@@ -23,8 +23,5 @@ pipelineJob('ghprb-test-job') {
     properties {
       githubProjectUrl('https://github.com/' + githubProjectFull)
     }
-    triggers {
-      commentFilePath('github.comment.file.txt')
-    }
   }
 }
