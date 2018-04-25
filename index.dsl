@@ -24,7 +24,6 @@ pipelineJob('ghprb-test-job') {
       githubProjectUrl('https://github.com/' + githubProjectFull)
     }
     triggers {
-      orgWhitelist('jenkinsci')
       commentFilePath('github.comment.file.txt')
     }
   }
