@@ -1,4 +1,4 @@
-// This index.dsl file will generate a Jenkins job using the 
+// This index.dsl file will generate a Jenkins job using the
 // github pull request plugin assuming it is present.
 
 githubNamespace = 'samrocketman'
@@ -20,16 +20,16 @@ pipelineJob('ghprb-test-job') {
       }
       scriptPath('Jenkinsfile')
     }
-  }
-  properties {
-    parameters {
-      stringParam('sha1', 'master', 'The commit hash to build.')
+    properties {
+      parameters {
+        stringParam('sha1', 'master', 'The commit hash to build.')
+      }
+      githubProjectUrl('https://github.com/' + githubProjectFull)
     }
-    githubProjectUrl('https://github.com/' + githubProjectFull)
-  }
-  triggers {
-    useGitHubHooks()
-    orgWhitelist('jenkinsci')
-    commentFilePath('github.comment.file.txt')
+    triggers {
+      useGitHubHooks()
+      orgWhitelist('jenkinsci')
+      commentFilePath('github.comment.file.txt')
+    }
   }
 }
